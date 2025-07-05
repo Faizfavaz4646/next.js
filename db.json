@@ -1,0 +1,22 @@
+{
+    "meals":[
+        { "id": 1,
+         "name": "Chicken Biryani",
+         "slug":"chicken-biryani",
+        "category": "Non-Veg",
+        "image":"https://i.pinimg.com/736x/e8/2a/69/e82a6901c89fc34336f1dc0dfca82aba.jpg", 
+        "description": "A spicy, flavorful rice dish with chicken.",
+       "ingredients": "Chicken, rice, spices, onion, yogurt"
+        },
+        
+        { "id": 2,
+         "name": "Indonesian Steak",
+         "slug":"indonesian-steak",
+        "category": "Non-Veg",
+        "image":"https://i.pinimg.com/736x/52/88/6e/52886e5c6b6e47f319bec6b858a7793b.jpg",
+       "description": "jjx, flavorful steak.",
+       "ingredients": "Steak, onion, tomoto"
+        
+     }
+    ]
+}
