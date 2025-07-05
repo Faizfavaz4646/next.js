@@ -1,11 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 
-// app/meals/page.tsx
+
+type Meal = {
+  id: number;
+  name: string;
+  slug: string;
+  image: string;
+  category: string;
+  
+};
 export default async function MealsPage() {
   const res = await fetch("http://localhost:5500/meals", {
     next: { revalidate: 60 },
   });
-  const meals = await res.json();
+  const meals:Meal[] = await res.json();
 
   return (
     <main className="bg-black">
@@ -15,7 +24,13 @@ export default async function MealsPage() {
           <Link key={m.id} href={`/meals/${m.slug}`}>
             <div className="border border-gray-100 shadow-xl rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300">
               <div className="flex justify-center h-auto w-auto rounded-xl">
-                <img className="object-contain w-full h-60 mt-4" src={m.image} alt={m.name} />
+                <Image className="object-contain w-full h-60 mt-4" 
+                src={m.image} 
+                alt={m.name} 
+                width={400}
+                height={240}
+                />
+
               </div>
               <h2 className="text-xl font-semibold text-red-500">{m.name}</h2>
               <h2 className="text-l font-semibold text-white">
