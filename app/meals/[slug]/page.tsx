@@ -12,6 +12,7 @@ type Meal={
   slug: string;
   description: string;
   ingredients: string;
+  image:string;
 }
 
 export default async function MealDetail({ params }: Props) {
@@ -19,7 +20,7 @@ export default async function MealDetail({ params }: Props) {
     cache: "no-store",
   });
 
-  const data = await res.json();
+  const data:Meal[] = await res.json();
   const meal = data[0];
 
   if (!meal) {
@@ -29,6 +30,7 @@ export default async function MealDetail({ params }: Props) {
   return (
     <div className="p-6 max-w-xl mx-auto">
       <Image
+      
         src={meal.image}
         alt={meal.name}
         width={600}
