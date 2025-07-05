@@ -1,4 +1,5 @@
 // app/meals/[slug]/page.tsx
+import Image from "next/image";
 
 import { notFound } from "next/navigation";
 
@@ -20,11 +21,11 @@ export default async function MealDetail({ params }: Props) {
 
   return (
     <div className="p-6 max-w-xl mx-auto">
-      <img
+      <Image
         src={meal.image}
         alt={meal.name}
-        className="w-full h-auto rounded-lg shadow mb-6"
-      />
+        className="w-full h-auto rounded-lg shadow mb-6">
+      </Image>
       <h1 className="text-2xl font-bold">{meal.name}</h1>
       <p className="mt-2 text-gray-700">{meal.description}</p>
       <h2 className="mt-4 font-semibold">Ingredients:</h2>
